@@ -12,9 +12,9 @@ function parseDimensions(input, random = false) {
       const [width, height] = input.match(/\d+/g);
       if (random) {
         const randomNum = Math.floor(Math.random() * 999) + 1;
-        return `${width}${height ? `/${height}` : ""}?random=${randomNum}`;
+        return `/${width}${height ? `/${height}` : ""}?random=${randomNum}`;
       } else {
-        return `${width}${height ? `/${height}` : ""}`;
+        return `/${width}${height ? `/${height}` : ""}`;
       }
     }
   }
@@ -22,10 +22,12 @@ function parseDimensions(input, random = false) {
   return "Invalid input format";
 }
 
+// PICSUM ---------------------------------------------------
+
 nova.commands.register(
   "image-placeholder.picsumInsertImagePlaceholder",
   (editor) => {
-    let provider = "https://picsum.photos/";
+    let provider = "https://picsum.photos";
     let options = {};
     const random = false;
     nova.workspace.showInputPalette(
@@ -44,7 +46,7 @@ nova.commands.register(
 nova.commands.register(
   "image-placeholder.picsumInsertImagePlaceholderRandom",
   (editor) => {
-    let provider = "https://picsum.photos/";
+    let provider = "https://picsum.photos";
     let options = {};
     const random = true;
 
@@ -64,7 +66,7 @@ nova.commands.register(
 nova.commands.register(
   "image-placeholder.picsumInsertImagePlaceholderTag",
   (editor) => {
-    let provider = "https://picsum.photos/";
+    let provider = "https://picsum.photos";
     let options = {};
     const random = false;
 
@@ -84,7 +86,7 @@ nova.commands.register(
 nova.commands.register(
   "image-placeholder.picsumInsertImagePlaceholderCssBg",
   (editor) => {
-    const provider = "https://picsum.photos/";
+    const provider = "https://picsum.photos";
     const options = {};
     const random = false;
 
@@ -104,7 +106,7 @@ nova.commands.register(
 nova.commands.register(
   "image-placeholder.picsumInsertImagePlaceholderCssBgRandom",
   (editor) => {
-    const provider = "https://picsum.photos/";
+    const provider = "https://picsum.photos";
     const options = {};
     const random = true;
 
