@@ -33,6 +33,18 @@
       {
         "title": "Picsum CSS background placeholder random",
         "command": "image-placeholder.picsumInsertImagePlaceholderCssBg"
+      },
+      {
+        "title": "Placekitten image placeholder",
+        "command": "image-placeholder.placeKittenInsertImagePlaceholder"
+      },
+      {
+        "title": "Placekitten img tag placeholder",
+        "command": "image-placeholder.placeKittenInsertImagePlaceholderTag"
+      },
+      {
+        "title": "Placekitten CSS background placeholder",
+        "command": "image-placeholder.placeKittenInsertImagePlaceholderCssBg"
       }
     ]
   }

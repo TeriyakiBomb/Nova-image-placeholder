@@ -122,3 +122,64 @@ nova.commands.register(
     );
   }
 );
+
+// PLACEKITTEN ---------------------------------------------------
+
+nova.commands.register(
+  "image-placeholder.placeKittenInsertImagePlaceholder",
+  (editor) => {
+    let provider = "http://placekitten.com";
+    let options = {};
+    const random = false;
+    nova.workspace.showInputPalette(
+      "Enter width and then height",
+      options,
+      function (result) {
+        if (result) {
+          let dimensions = parseDimensions(result, random);
+          editor.insert(provider + dimensions);
+        }
+      }
+    );
+  }
+);
+
+nova.commands.register(
+  "image-placeholder.placeKittenInsertImagePlaceholderTag",
+  (editor) => {
+    let provider = "http://placekitten.com";
+    let options = {};
+    const random = false;
+
+    nova.workspace.showInputPalette(
+      "Enter width and then height, outputs an <img>",
+      options,
+      function (result) {
+        if (result) {
+          let dimensions = parseDimensions(result, random);
+          editor.insert(`<img src="${provider}${dimensions}" alt="$[]">`);
+        }
+      }
+    );
+  }
+);
+
+nova.commands.register(
+  "image-placeholder.placeKittenInsertImagePlaceholderCssBg",
+  (editor) => {
+    const provider = "http://placekitten.com";
+    const options = {};
+    const random = false;
+
+    nova.workspace.showInputPalette(
+      "Enter width and then height, outputs as CSS background iamge",
+      options,
+      function (result) {
+        if (result) {
+          let dimensions = parseDimensions(result, random);
+          editor.insert(`background-image: url("${provider}${dimensions}")`);
+        }
+      }
+    );
+  }
+);
