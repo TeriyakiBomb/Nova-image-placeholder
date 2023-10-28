@@ -21,6 +21,14 @@
       {
         "title": "Insert random image placeholder",
         "command": "lorem-picsum.insertImagePlaceholderRandom"
+      },
+      {
+        "title": "Insert img tag placeholder",
+        "command": "lorem-picsum.insertImagePlaceholderTag"
+      },
+      {
+        "title": "Insert CSS background placeholder",
+        "command": "lorem-picsum.insertImagePlaceholderCssBg"
       }
     ]
   },

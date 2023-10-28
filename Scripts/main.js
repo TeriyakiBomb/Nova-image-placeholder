@@ -59,7 +59,7 @@ nova.commands.register(
     let generator = "https://picsum.photos/";
     var options = {};
     nova.workspace.showInputPalette(
-      "Enter width and then height",
+      "Enter width and then height, randomised output",
       options,
       function (result) {
         // Rename the parameter from 'editor' to 'inputEditor'
@@ -71,3 +71,35 @@ nova.commands.register(
     );
   }
 );
+
+nova.commands.register("lorem-picsum.insertImagePlaceholderTag", (editor) => {
+  let generator = "https://picsum.photos/";
+  var options = {};
+  nova.workspace.showInputPalette(
+    "Enter width and then height, outputs an <img>",
+    options,
+    function (result) {
+      // Rename the parameter from 'editor' to 'inputEditor'
+      if (result) {
+        let dimensions = parseDimensions(result);
+        editor.insert(`<img src="${generator}${dimensions}" alt="$[]">`);
+      }
+    }
+  );
+});
+
+nova.commands.register("lorem-picsum.insertImagePlaceholderCssBg", (editor) => {
+  let generator = "https://picsum.photos/";
+  var options = {};
+  nova.workspace.showInputPalette(
+    "Enter width and then height, outputs as CSS background iamge",
+    options,
+    function (result) {
+      // Rename the parameter from 'editor' to 'inputEditor'
+      if (result) {
+        let dimensions = parseDimensions(result);
+        editor.insert(`background-image: url("${generator}${dimensions}")`);
+      }
+    }
+  );
+});
