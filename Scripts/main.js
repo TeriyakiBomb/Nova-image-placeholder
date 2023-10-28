@@ -1,3 +1,9 @@
+const providers = {
+  picsum: "https://picsum.photos",
+  placekitten: "http://placekitten.com",
+  loremflicker: "https://loremflickr.com",
+};
+
 function parseDimensions(input, random = false) {
   const regexes = [
     /^\d+\s\d+$/,
@@ -27,7 +33,7 @@ function parseDimensions(input, random = false) {
 nova.commands.register(
   "image-placeholder.picsumInsertImagePlaceholder",
   (editor) => {
-    let provider = "https://picsum.photos";
+    let provider = providers.picsum;
     let options = {};
     const random = false;
     nova.workspace.showInputPalette(
@@ -46,7 +52,7 @@ nova.commands.register(
 nova.commands.register(
   "image-placeholder.picsumInsertImagePlaceholderRandom",
   (editor) => {
-    let provider = "https://picsum.photos";
+    let provider = providers.picsum;
     let options = {};
     const random = true;
 
@@ -66,7 +72,7 @@ nova.commands.register(
 nova.commands.register(
   "image-placeholder.picsumInsertImagePlaceholderTag",
   (editor) => {
-    let provider = "https://picsum.photos";
+    let provider = providers.picsum;
     let options = {};
     const random = false;
 
@@ -86,7 +92,7 @@ nova.commands.register(
 nova.commands.register(
   "image-placeholder.picsumInsertImagePlaceholderCssBg",
   (editor) => {
-    const provider = "https://picsum.photos";
+    const provider = providers.picsum;
     const options = {};
     const random = false;
 
@@ -106,7 +112,7 @@ nova.commands.register(
 nova.commands.register(
   "image-placeholder.picsumInsertImagePlaceholderCssBgRandom",
   (editor) => {
-    const provider = "https://picsum.photos";
+    const provider = providers.picsum;
     const options = {};
     const random = true;
 
@@ -128,7 +134,7 @@ nova.commands.register(
 nova.commands.register(
   "image-placeholder.placeKittenInsertImagePlaceholder",
   (editor) => {
-    let provider = "http://placekitten.com";
+    let provider = providers.placekitten;
     let options = {};
     const random = false;
     nova.workspace.showInputPalette(
@@ -147,7 +153,7 @@ nova.commands.register(
 nova.commands.register(
   "image-placeholder.placeKittenInsertImagePlaceholderTag",
   (editor) => {
-    let provider = "http://placekitten.com";
+    let provider = providers.placekitten;
     let options = {};
     const random = false;
 
@@ -167,7 +173,7 @@ nova.commands.register(
 nova.commands.register(
   "image-placeholder.placeKittenInsertImagePlaceholderCssBg",
   (editor) => {
-    const provider = "http://placekitten.com";
+    const provider = providers.placekitten;
     const options = {};
     const random = false;
 
