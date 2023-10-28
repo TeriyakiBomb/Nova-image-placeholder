@@ -1,6 +1,6 @@
 {
-  "identifier": "teriyaki.ImagePlaceholder",
-  "name": "Image placeholder",
+  "identifier": "teriyaki.Placeholder",
+  "name": " placeholder",
   "organization": "Teriyaki",
   "description": "Lorem ipsum, dolor sit amet.",
   "version": "1.0",
@@ -16,35 +16,51 @@
     "editor": [
       {
         "title": "Picsum image placeholder",
-        "command": "image-placeholder.picsumInsertImagePlaceholder"
+        "command": "image-placeholder.picsumPlaceholder"
       },
       {
         "title": "Picsum image placeholder random",
-        "command": "image-placeholder.picsumInsertImagePlaceholderRandom"
+        "command": "image-placeholder.picsumPlaceholderRandom"
       },
       {
         "title": "Picsum img tag placeholder",
-        "command": "image-placeholder.picsumInsertImagePlaceholderTag"
+        "command": "image-placeholder.picsumPlaceholderTag"
       },
       {
         "title": "Picsum CSS background placeholder",
-        "command": "image-placeholder.picsumInsertImagePlaceholderCssBg"
+        "command": "image-placeholder.picsumPlaceholderCssBg"
       },
       {
-        "title": "Picsum CSS background placeholder random",
-        "command": "image-placeholder.picsumInsertImagePlaceholderCssBg"
+        "title": "Loremflickr image placeholder",
+        "command": "image-placeholder.loremflickrPlaceholder"
+      },
+      {
+        "title": "Loremflickr image placeholder random",
+        "command": "image-placeholder.loremflickrPlaceholderRandom"
+      },
+      {
+        "title": "Loremflickr img tag placeholder",
+        "command": "image-placeholder.loremflickrPlaceholderTag"
+      },
+      {
+        "title": "Loremflickr CSS background placeholder",
+        "command": "image-placeholder.loremflickrPlaceholderCssBg"
+      },
+      {
+        "title": "Loremflickr CSS background placeholder random",
+        "command": "image-placeholder.loremflickrPlaceholderCssBgRandom"
       },
       {
         "title": "Placekitten image placeholder",
-        "command": "image-placeholder.placeKittenInsertImagePlaceholder"
+        "command": "image-placeholder.placekittenPlaceholder"
       },
       {
         "title": "Placekitten img tag placeholder",
-        "command": "image-placeholder.placeKittenInsertImagePlaceholderTag"
+        "command": "image-placeholder.placekittenPlaceholderTag"
       },
       {
         "title": "Placekitten CSS background placeholder",
-        "command": "image-placeholder.placeKittenInsertImagePlaceholderCssBg"
+        "command": "image-placeholder.placekittenPlaceholderCssBg"
       }
     ]
   }
