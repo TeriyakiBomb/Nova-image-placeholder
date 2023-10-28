@@ -1,0 +1,40 @@
+{
+    "identifier": "teriyaki.LoremPicsum",
+    "name": "Lorem Picsum",
+    "organization": "Teriyaki",
+    "description": "Lorem ipsum, dolor sit amet.",
+    "version": "1.0",
+    "categories": ["commands"],
+    
+    "main": "main.js",
+    
+    "activationEvents": [
+        "onLanguage:html"
+    ],
+    
+    "entitlements": {
+        
+    },
+    
+    "commands": {
+        "extensions": [
+            {
+                "title": "Open URL",
+                "command": "lorem-picsum.openURL"
+            },
+            {
+                "title": "Run External Tool",
+                "command": "lorem-picsum.runExternalTool"
+            }
+        ]
+    },
+    
+    "config": [
+        {
+            "key": "lorem-picsum.foobar",
+            "title": "Foo the bar",
+            "type": "boolean",
+            "default": false
+        }
+    ]
+}
