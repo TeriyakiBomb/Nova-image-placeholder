@@ -10,7 +10,7 @@ function providerName(provider) {
 }
 
 function getRandomNumber() {
-  return Math.floor(Math.random() * 999) + 1;
+  return Math.floor(Math.random() * 9999) + 1;
 }
 
 function picsumDimensions(input, random) {
@@ -117,13 +117,33 @@ nova.commands.register("image-placeholder.picsumPlaceholderTag", (editor) => {
   );
 });
 
+nova.commands.register(
+  "image-placeholder.picsumPlaceholderTagRandom",
+  (editor) => {
+    let provider = providers.picsum;
+    let options = {};
+    const random = true;
+
+    nova.workspace.showInputPalette(
+      "Enter width and then height, outputs an <img>",
+      options,
+      function (result) {
+        if (result) {
+          let dimensions = picsumDimensions(result, random, provider);
+          editor.insert(`<img src="${provider}${dimensions}" alt="$[]">`);
+        }
+      }
+    );
+  }
+);
+
 nova.commands.register("image-placeholder.picsumPlaceholderCssBg", (editor) => {
   const provider = providers.picsum;
   const options = {};
   const random = false;
 
   nova.workspace.showInputPalette(
-    "Enter width and then height, outputs as CSS background iamge",
+    "Enter width and then height, outputs as CSS background image",
     options,
     function (result) {
       if (result) {
@@ -142,69 +162,11 @@ nova.commands.register(
     const random = true;
 
     nova.workspace.showInputPalette(
-      "Enter width and then height, outputs as CSS background iamge",
+      "Enter width and then height, outputs as CSS background image",
       options,
       function (result) {
         if (result) {
           let dimensions = picsumDimensions(result, random, provider);
-          editor.insert(`background-image: url("${provider}${dimensions}")`);
-        }
-      }
-    );
-  }
-);
-
-// PLACEKITTEN ---------------------------------------------------
-
-nova.commands.register("image-placeholder.placekittenPlaceholder", (editor) => {
-  let provider = providers.placekitten;
-  let options = {};
-  const random = false;
-  nova.workspace.showInputPalette(
-    "Enter width and then height",
-    options,
-    function (result) {
-      if (result) {
-        let dimensions = placekittenDimensions(result, random, provider);
-        editor.insert(provider + dimensions);
-      }
-    }
-  );
-});
-
-nova.commands.register(
-  "image-placeholder.placekittenPlaceholderTag",
-  (editor) => {
-    let provider = providers.placekitten;
-    let options = {};
-    const random = false;
-
-    nova.workspace.showInputPalette(
-      "Enter width and then height, outputs an <img>",
-      options,
-      function (result) {
-        if (result) {
-          let dimensions = placekittenDimensions(result, random, provider);
-          editor.insert(`<img src="${provider}${dimensions}" alt="$[]">`);
-        }
-      }
-    );
-  }
-);
-
-nova.commands.register(
-  "image-placeholder.placekittenPlaceholderCssBg",
-  (editor) => {
-    const provider = providers.placekitten;
-    const options = {};
-    const random = false;
-
-    nova.workspace.showInputPalette(
-      "Enter width and then height, outputs as CSS background iamge",
-      options,
-      function (result) {
-        if (result) {
-          let dimensions = placekittenDimensions(result, random, provider);
           editor.insert(`background-image: url("${provider}${dimensions}")`);
         }
       }
@@ -297,7 +259,7 @@ nova.commands.register(
     const random = false;
 
     nova.workspace.showInputPalette(
-      "Enter width and then height, outputs as CSS background iamge",
+      "Enter width and then height, outputs as CSS background image",
       options,
       function (result) {
         if (result) {
@@ -317,11 +279,69 @@ nova.commands.register(
     const random = true;
 
     nova.workspace.showInputPalette(
-      "Enter width and then height, outputs as CSS background iamge",
+      "Enter width and then height, outputs as CSS background image",
       options,
       function (result) {
         if (result) {
           let dimensions = loremflickrDimensions(result, random, provider);
+          editor.insert(`background-image: url("${provider}${dimensions}")`);
+        }
+      }
+    );
+  }
+);
+
+// PLACEKITTEN ---------------------------------------------------
+
+nova.commands.register("image-placeholder.placekittenPlaceholder", (editor) => {
+  let provider = providers.placekitten;
+  let options = {};
+  const random = false;
+  nova.workspace.showInputPalette(
+    "Enter width and then height",
+    options,
+    function (result) {
+      if (result) {
+        let dimensions = placekittenDimensions(result, random, provider);
+        editor.insert(provider + dimensions);
+      }
+    }
+  );
+});
+
+nova.commands.register(
+  "image-placeholder.placekittenPlaceholderTag",
+  (editor) => {
+    let provider = providers.placekitten;
+    let options = {};
+    const random = false;
+
+    nova.workspace.showInputPalette(
+      "Enter width and then height, outputs an <img>",
+      options,
+      function (result) {
+        if (result) {
+          let dimensions = placekittenDimensions(result, random, provider);
+          editor.insert(`<img src="${provider}${dimensions}" alt="$[]">`);
+        }
+      }
+    );
+  }
+);
+
+nova.commands.register(
+  "image-placeholder.placekittenPlaceholderCssBg",
+  (editor) => {
+    const provider = providers.placekitten;
+    const options = {};
+    const random = false;
+
+    nova.workspace.showInputPalette(
+      "Enter width and then height, outputs as CSS background image",
+      options,
+      function (result) {
+        if (result) {
+          let dimensions = placekittenDimensions(result, random, provider);
           editor.insert(`background-image: url("${provider}${dimensions}")`);
         }
       }

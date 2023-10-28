@@ -1,6 +1,6 @@
 {
   "identifier": "teriyaki.Placeholder",
-  "name": " placeholder",
+  "name": "Image placeholder",
   "organization": "Teriyaki",
   "description": "Lorem ipsum, dolor sit amet.",
   "version": "1.0",
@@ -27,9 +27,14 @@
         "command": "image-placeholder.picsumPlaceholderTag"
       },
       {
+        "title": "Picsum img tag placeholder",
+        "command": "image-placeholder.picsumPlaceholderTagRandom"
+      },
+      {
         "title": "Picsum CSS background placeholder",
         "command": "image-placeholder.picsumPlaceholderCssBg"
       },
+      { "separator": true },
       {
         "title": "Loremflickr image placeholder",
         "command": "image-placeholder.loremflickrPlaceholder"
