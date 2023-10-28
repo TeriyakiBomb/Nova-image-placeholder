@@ -15,20 +15,20 @@
   "commands": {
     "editor": [
       {
-        "title": "Insert image placeholder",
-        "command": "image-placeholder.insertImagePlaceholder"
+        "title": "Picsum image placeholder",
+        "command": "image-placeholder.picsumInsertImagePlaceholder"
       },
       {
-        "title": "Insert random image placeholder",
-        "command": "image-placeholder.insertImagePlaceholderRandom"
+        "title": "Picsum random image placeholder",
+        "command": "image-placeholder.picsumInsertImagePlaceholderRandom"
       },
       {
-        "title": "Insert img tag placeholder",
-        "command": "image-placeholder.insertImagePlaceholderTag"
+        "title": "Picsum img tag placeholder",
+        "command": "image-placeholder.picsumInsertImagePlaceholderTag"
       },
       {
-        "title": "Insert CSS background placeholder",
-        "command": "image-placeholder.insertImagePlaceholderCssBg"
+        "title": "Picsum CSS background placeholder",
+        "command": "image-placeholder.picsumInsertImagePlaceholderCssBg"
       }
     ]
   }

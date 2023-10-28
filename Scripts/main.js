@@ -37,27 +37,30 @@ function parseDimensionsRandom(input) {
   return "Invalid input format";
 }
 
-nova.commands.register("image-placeholder.insertImagePlaceholder", (editor) => {
-  let generator = "https://picsum.photos/";
-  var options = {};
-  nova.workspace.showInputPalette(
-    "Enter width and then height",
-    options,
-    function (result) {
-      // Rename the parameter from 'editor' to 'inputEditor'
-      if (result) {
-        let dimensions = parseDimensions(result);
-        editor.insert(generator + dimensions);
-      }
-    }
-  );
-});
-
 nova.commands.register(
-  "image-placeholder.insertImagePlaceholderRandom",
+  "image-placeholder.picsumInsertImagePlaceholder",
   (editor) => {
     let generator = "https://picsum.photos/";
-    var options = {};
+    let options = {};
+    nova.workspace.showInputPalette(
+      "Enter width and then height",
+      options,
+      function (result) {
+        // Rename the parameter from 'editor' to 'inputEditor'
+        if (result) {
+          let dimensions = parseDimensions(result);
+          editor.insert(generator + dimensions);
+        }
+      }
+    );
+  }
+);
+
+nova.commands.register(
+  "image-placeholder.picsumInsertImagePlaceholderRandom",
+  (editor) => {
+    let generator = "https://picsum.photos/";
+    let options = {};
     nova.workspace.showInputPalette(
       "Enter width and then height, randomised output",
       options,
@@ -73,10 +76,10 @@ nova.commands.register(
 );
 
 nova.commands.register(
-  "image-placeholder.insertImagePlaceholderTag",
+  "image-placeholder.picsumInsertImagePlaceholderTag",
   (editor) => {
     let generator = "https://picsum.photos/";
-    var options = {};
+    let options = {};
     nova.workspace.showInputPalette(
       "Enter width and then height, outputs an <img>",
       options,
@@ -92,10 +95,10 @@ nova.commands.register(
 );
 
 nova.commands.register(
-  "image-placeholder.insertImagePlaceholderCssBg",
+  "image-placeholder.picsumInsertImagePlaceholderCssBg",
   (editor) => {
     let generator = "https://picsum.photos/";
-    var options = {};
+    let options = {};
     nova.workspace.showInputPalette(
       "Enter width and then height, outputs as CSS background iamge",
       options,
