@@ -19,7 +19,7 @@
         "command": "image-placeholder.picsumInsertImagePlaceholder"
       },
       {
-        "title": "Picsum random image placeholder",
+        "title": "Picsum image placeholder random",
         "command": "image-placeholder.picsumInsertImagePlaceholderRandom"
       },
       {
@@ -28,6 +28,10 @@
       },
       {
         "title": "Picsum CSS background placeholder",
+        "command": "image-placeholder.picsumInsertImagePlaceholderCssBg"
+      },
+      {
+        "title": "Picsum CSS background placeholder random",
         "command": "image-placeholder.picsumInsertImagePlaceholderCssBg"
       }
     ]

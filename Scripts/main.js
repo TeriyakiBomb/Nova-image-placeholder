@@ -25,16 +25,16 @@ function parseDimensions(input, random = false) {
 nova.commands.register(
   "image-placeholder.picsumInsertImagePlaceholder",
   (editor) => {
-    let generator = "https://picsum.photos/";
+    let provider = "https://picsum.photos/";
     let options = {};
+    const random = false;
     nova.workspace.showInputPalette(
       "Enter width and then height",
       options,
       function (result) {
-        // Rename the parameter from 'editor' to 'inputEditor'
         if (result) {
-          let dimensions = parseDimensions(result);
-          editor.insert(generator + dimensions);
+          let dimensions = parseDimensions(result, random);
+          editor.insert(provider + dimensions);
         }
       }
     );
@@ -44,17 +44,17 @@ nova.commands.register(
 nova.commands.register(
   "image-placeholder.picsumInsertImagePlaceholderRandom",
   (editor) => {
-    let generator = "https://picsum.photos/";
+    let provider = "https://picsum.photos/";
     let options = {};
+    const random = true;
+
     nova.workspace.showInputPalette(
       "Enter width and then height, randomised output",
       options,
       function (result) {
-        // Rename the parameter from 'editor' to 'inputEditor'
         if (result) {
-          random = true;
           let dimensions = parseDimensions(result, random);
-          editor.insert(generator + dimensions);
+          editor.insert(provider + dimensions);
         }
       }
     );
@@ -64,17 +64,17 @@ nova.commands.register(
 nova.commands.register(
   "image-placeholder.picsumInsertImagePlaceholderTag",
   (editor) => {
-    let generator = "https://picsum.photos/";
+    let provider = "https://picsum.photos/";
     let options = {};
+    const random = false;
+
     nova.workspace.showInputPalette(
       "Enter width and then height, outputs an <img>",
       options,
       function (result) {
-        // Rename the parameter from 'editor' to 'inputEditor'
         if (result) {
-          random = false;
           let dimensions = parseDimensions(result, random);
-          editor.insert(`<img src="${generator}${dimensions}" alt="$[]">`);
+          editor.insert(`<img src="${provider}${dimensions}" alt="$[]">`);
         }
       }
     );
@@ -84,17 +84,37 @@ nova.commands.register(
 nova.commands.register(
   "image-placeholder.picsumInsertImagePlaceholderCssBg",
   (editor) => {
-    let generator = "https://picsum.photos/";
-    let options = {};
+    const provider = "https://picsum.photos/";
+    const options = {};
+    const random = false;
+
     nova.workspace.showInputPalette(
       "Enter width and then height, outputs as CSS background iamge",
       options,
       function (result) {
-        // Rename the parameter from 'editor' to 'inputEditor'
         if (result) {
-          random = false;
           let dimensions = parseDimensions(result, random);
-          editor.insert(`background-image: url("${generator}${dimensions}")`);
+          editor.insert(`background-image: url("${provider}${dimensions}")`);
+        }
+      }
+    );
+  }
+);
+
+nova.commands.register(
+  "image-placeholder.picsumInsertImagePlaceholderCssBgRandom",
+  (editor) => {
+    const provider = "https://picsum.photos/";
+    const options = {};
+    const random = true;
+
+    nova.workspace.showInputPalette(
+      "Enter width and then height, outputs as CSS background iamge",
+      options,
+      function (result) {
+        if (result) {
+          let dimensions = parseDimensions(result, random);
+          editor.insert(`background-image: url("${provider}${dimensions}")`);
         }
       }
     );
