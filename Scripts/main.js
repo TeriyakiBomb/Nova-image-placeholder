@@ -37,7 +37,7 @@ function parseDimensionsRandom(input) {
   return "Invalid input format";
 }
 
-nova.commands.register("lorem-picsum.insertImagePlaceholder", (editor) => {
+nova.commands.register("image-placeholder.insertImagePlaceholder", (editor) => {
   let generator = "https://picsum.photos/";
   var options = {};
   nova.workspace.showInputPalette(
@@ -54,7 +54,7 @@ nova.commands.register("lorem-picsum.insertImagePlaceholder", (editor) => {
 });
 
 nova.commands.register(
-  "lorem-picsum.insertImagePlaceholderRandom",
+  "image-placeholder.insertImagePlaceholderRandom",
   (editor) => {
     let generator = "https://picsum.photos/";
     var options = {};
@@ -72,34 +72,40 @@ nova.commands.register(
   }
 );
 
-nova.commands.register("lorem-picsum.insertImagePlaceholderTag", (editor) => {
-  let generator = "https://picsum.photos/";
-  var options = {};
-  nova.workspace.showInputPalette(
-    "Enter width and then height, outputs an <img>",
-    options,
-    function (result) {
-      // Rename the parameter from 'editor' to 'inputEditor'
-      if (result) {
-        let dimensions = parseDimensions(result);
-        editor.insert(`<img src="${generator}${dimensions}" alt="$[]">`);
+nova.commands.register(
+  "image-placeholder.insertImagePlaceholderTag",
+  (editor) => {
+    let generator = "https://picsum.photos/";
+    var options = {};
+    nova.workspace.showInputPalette(
+      "Enter width and then height, outputs an <img>",
+      options,
+      function (result) {
+        // Rename the parameter from 'editor' to 'inputEditor'
+        if (result) {
+          let dimensions = parseDimensions(result);
+          editor.insert(`<img src="${generator}${dimensions}" alt="$[]">`);
+        }
       }
-    }
-  );
-});
+    );
+  }
+);
 
-nova.commands.register("lorem-picsum.insertImagePlaceholderCssBg", (editor) => {
-  let generator = "https://picsum.photos/";
-  var options = {};
-  nova.workspace.showInputPalette(
-    "Enter width and then height, outputs as CSS background iamge",
-    options,
-    function (result) {
-      // Rename the parameter from 'editor' to 'inputEditor'
-      if (result) {
-        let dimensions = parseDimensions(result);
-        editor.insert(`background-image: url("${generator}${dimensions}")`);
+nova.commands.register(
+  "image-placeholder.insertImagePlaceholderCssBg",
+  (editor) => {
+    let generator = "https://picsum.photos/";
+    var options = {};
+    nova.workspace.showInputPalette(
+      "Enter width and then height, outputs as CSS background iamge",
+      options,
+      function (result) {
+        // Rename the parameter from 'editor' to 'inputEditor'
+        if (result) {
+          let dimensions = parseDimensions(result);
+          editor.insert(`background-image: url("${generator}${dimensions}")`);
+        }
       }
-    }
-  );
-});
+    );
+  }
+);

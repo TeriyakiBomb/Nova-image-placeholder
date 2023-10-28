@@ -1,6 +1,6 @@
 {
-  "identifier": "teriyaki.LoremPicsum",
-  "name": "Lorem Picsum",
+  "identifier": "teriyaki.ImagePlaceholder",
+  "name": "Image placeholder",
   "organization": "Teriyaki",
   "description": "Lorem ipsum, dolor sit amet.",
   "version": "1.0",
@@ -16,29 +16,20 @@
     "editor": [
       {
         "title": "Insert image placeholder",
-        "command": "lorem-picsum.insertImagePlaceholder"
+        "command": "image-placeholder.insertImagePlaceholder"
       },
       {
         "title": "Insert random image placeholder",
-        "command": "lorem-picsum.insertImagePlaceholderRandom"
+        "command": "image-placeholder.insertImagePlaceholderRandom"
       },
       {
         "title": "Insert img tag placeholder",
-        "command": "lorem-picsum.insertImagePlaceholderTag"
+        "command": "image-placeholder.insertImagePlaceholderTag"
       },
       {
         "title": "Insert CSS background placeholder",
-        "command": "lorem-picsum.insertImagePlaceholderCssBg"
+        "command": "image-placeholder.insertImagePlaceholderCssBg"
       }
     ]
-  },
-
-  "config": [
-    {
-      "key": "lorem-picsum.foobar",
-      "title": "Foo the bar",
-      "type": "boolean",
-      "default": false
-    }
-  ]
+  }
 }
