@@ -1,40 +1,4 @@
-<!--
-👋 Hello! As Nova users browse the extensions library, a good README can help them understand what your extension does, how it works, and what setup or configuration it may require.
-
-Not every extension will need every item described below. Use your best judgement when deciding which parts to keep to provide the best experience for your new users.
-
-💡 Quick Tip! As you edit this README template, you can preview your changes by selecting **Extensions → Activate Project as Extension**, opening the Extension Library, and selecting "Lorem Picsum" in the sidebar.
-
-Let's get started!
--->
-
-<!--
-🎈 Include a brief description of the features your extension provides. For example:
--->
-
-**Lorem Picsum** provides integration with **A Helpful Tool**, including the most important feature, something that's really helpful, and _a little-known secret!_
-
-<!--
-🎈 It can also be helpful to include a screenshot or GIF showing your extension in action:
--->
-
-![](https://nova.app/images/en/dark/editor.png)
-
-## Requirements
-
-<!--
-🎈 If your extension depends on external processes or tools that users will need to have, it's helpful to list those and provide links to their installers:
--->
-
-Lorem Picsum requires some additional tools to be installed on your Mac:
-
-- [Node.js 8.2.0](https://nodejs.org) and NPM 5.2.0 or newer
-
-<!--
-✨ Providing tips, tricks, or other guides for installing or configuring external dependencies can go a long way toward helping your users have a good setup experience:
--->
-
-> To install the current stable version of Node, click the "Recommended for Most Users" button to begin the download. When that completes, double-click the **.pkg** installer to begin installation.
+**Image Placeholder** inserts placeholder images provided by Lorem Picsum, LoremFlickr and (most importantly) placekitten with the command palette.
 
 ## Usage
 
@@ -42,31 +6,59 @@ Lorem Picsum requires some additional tools to be installed on your Mac:
 🎈 If users will interact with your extension manually, describe those options:
 -->
 
-To run Lorem Picsum:
+To run Image Placeholder:
 
-- Select the **Editor → Lorem Picsum** menu item; or
-- Open the command palette and type `Lorem Picsum`
+- Select the **Editor → Image Placeholder** menu item; or
+- Open the command palette and type `placeholder` and select the service and type of placeholder you want.
 
-<!--
-🎈 Alternatively, if your extension runs automatically (as in the case of a validator), consider showing users what they can expect to see:
--->
+Image placeholder supports three image providers(more planned) and has various options for each.
 
-Lorem Picsum runs any time you open a local project, automatically lints all open files, then reports errors and warnings in Nova's **Issues** sidebar and the editor gutter:
+You can provide dimensions as either `w h`, `w,h` or `w/h` LoremFlickr also supports categories, so you can write something like `600 400 monkey` press <kbd>⮐</kbd> and get this image:
 
-![](https://nova.app/images/en/light/tools/sidebars.png)
+![](https://loremflickr.com/400/300/monkey)
 
-### Configuration
+_Isn't that a lovely picture eh?_
 
-<!--
-🎈 If your extension offers global- or workspace-scoped preferences, consider pointing users toward those settings. For example:
--->
+Both Lorem picusum and LoremFlickr support **random** commands, which adds a random seed string ensuring images of the same dimension will return different images, both of these are pictures of a horse, using the Lorem Flicker placeholder random command and typing `100 horse`
 
-To configure global preferences, open **Extensions → Extension Library...** then select Lorem Picsum's **Preferences** tab.
+![](https://loremflickr.com/100/100/horse?random=9455)
+![](https://loremflickr.com/100/100/horse?random=1022)
 
-You can also configure preferences on a per-project basis in **Project → Project Settings...**
+You can also insert `<img>` tags and css background images, snazzy.
 
-<!--
-👋 That's it! Happy developing!
+Here's the full list of commands:
 
-P.S. If you'd like, you can remove these comments before submitting your extension 😉
--->
+### Lorem picsum
+
+- Picsum image placeholder
+- Picsum image placeholder random
+- Picsum img tag placeholder
+- Picsum img tag placeholder random
+- Picsum CSS background placeholder
+- Picsum CSS background placeholder random
+
+### LoremFlickr
+
+_also supports categories!_
+
+- LoremFlickr image placeholder
+- LoremFlickr image placeholder random
+- LoremFlickr img tag placeholder
+- LoremFlickr img tag placeholder random
+- LoremFlickr background placeholder
+- LoremFlickr background placeholder random
+
+### Placekitten
+
+- LoremFlickr image placeholder
+- LoremFlickr img tag placeholder
+- LoremFlickr background placeholder
+
+### Contribution and upcoming features
+
+This is V1.0, I'm planning on some improvements inlcuding
+
+- Support for placehold.co, inclding being able to specify colours and text etc
+- Support for LoremFlickr's lock parameter
+
+If there's anything else you'd like to see added or have feedback, feel free to leave an issue on the Github repo

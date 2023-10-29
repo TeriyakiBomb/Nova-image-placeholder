@@ -3,8 +3,12 @@
   "name": "Image placeholder",
   "organization": "Teriyaki",
   "description": "Insert placeholder images wih the command palette",
+  "repository": "https://github.com/TeriyakiBomb/Nova-image-placeholder",
+  "bugs": "https://github.com/TeriyakiBomb/Nova-image-placeholder/issues",
+  "funding": "https://ko-fi.com/ashteriyaki",
   "version": "1.0",
-  "categories": ["commands"],
+  "categories": ["commands", "tasks"],
+  "license": "MIT",
 
   "main": "main.js",
 
