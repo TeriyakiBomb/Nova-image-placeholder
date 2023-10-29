@@ -1,14 +1,12 @@
 {
-  "identifier": "teriyaki.Placeholder",
+  "identifier": "teriyaki.ImagePlaceholder",
   "name": "Image placeholder",
   "organization": "Teriyaki",
-  "description": "Lorem ipsum, dolor sit amet.",
+  "description": "Insert placeholder images wih the command palette",
   "version": "1.0",
   "categories": ["commands"],
 
   "main": "main.js",
-
-  "activationEvents": ["onLanguage:html"],
 
   "entitlements": {},
 
