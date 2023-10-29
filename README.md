@@ -1,4 +1,4 @@
-**Image Placeholder** inserts placeholder images provided by Lorem Picsum, LoremFlickr and (most importantly) placekitten with the command palette.
+**Image Placeholder** inserts placeholder images provided by Lorem Picsum, LoremFlickr and (most importantly) Placekitten with the command palette speedily.
 
 ## Usage
 
