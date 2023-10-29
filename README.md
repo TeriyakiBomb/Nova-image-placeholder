@@ -54,7 +54,7 @@ _also supports categories!_
 - LoremFlickr img tag placeholder
 - LoremFlickr background placeholder
 
-### Contribution and upcoming features
+## Contribution and upcoming features
 
 This is V1.0, I'm planning on some improvements inlcuding
 

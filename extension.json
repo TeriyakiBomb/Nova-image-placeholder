@@ -1,6 +1,6 @@
 {
   "identifier": "teriyaki.ImagePlaceholder",
-  "name": "Image placeholder",
+  "name": "Image Placeholder",
   "organization": "Teriyaki",
   "description": "Insert placeholder images with the command palette",
   "repository": "https://github.com/TeriyakiBomb/Nova-image-placeholder",
