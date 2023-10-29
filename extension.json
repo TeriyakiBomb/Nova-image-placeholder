@@ -42,27 +42,27 @@
       },
       { "separator": true },
       {
-        "title": "Loremflickr image placeholder",
+        "title": "LoremFlickr image placeholder",
         "command": "image-placeholder.loremflickrPlaceholder"
       },
       {
-        "title": "Loremflickr image placeholder random",
+        "title": "LoremFlickr image placeholder random",
         "command": "image-placeholder.loremflickrPlaceholderRandom"
       },
       {
-        "title": "Loremflickr img tag placeholder",
+        "title": "LoremFlickr img tag placeholder",
         "command": "image-placeholder.loremflickrPlaceholderTag"
       },
       {
-        "title": "Loremflickr img tag placeholder random",
+        "title": "LoremFlickr img tag placeholder random",
         "command": "image-placeholder.loremflickrPlaceholderTagRandom"
       },
       {
-        "title": "Loremflickr CSS background placeholder",
+        "title": "LoremFlickr CSS background placeholder",
         "command": "image-placeholder.loremflickrPlaceholderCssBg"
       },
       {
-        "title": "Loremflickr CSS background placeholder random",
+        "title": "LoremFlickr CSS background placeholder random",
         "command": "image-placeholder.loremflickrPlaceholderCssBgRandom"
       },
       { "separator": true },
