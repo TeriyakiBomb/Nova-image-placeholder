@@ -44,7 +44,7 @@ function placekittenDimensions(input) {
 }
 
 function loremflickrDimensions(input, random) {
-  const regex = /^(\d+)(?:\s|,)?(\d+)?(?:\s([\w\s,]+))?$/;
+  const regex = /^(\d+)(?:\s|,)?(\d+)?(?:\s([a-zA-Z\s,]+))?$/;
   if (regex.test(input)) {
     const matches = input.match(regex);
     const width = matches[1];
