@@ -14,14 +14,11 @@ function getRandomNumber() {
 }
 
 function picsumDimensions(input, random) {
-  const regex = /^(?:(w)?(\d+)|(\d+))(?:\s|,)(?:(h)?(\d+))?$/;
+  const regex = /^(\d+)(?:\s|,)?(\d+)?$/;
   if (regex.test(input)) {
     const matches = input.match(regex);
-    let width = matches[2] || matches[3];
-    let height = matches[5] || width;
-    if (matches[1] === "w") {
-      [width, height] = [height, width];
-    }
+    const width = matches[1];
+    const height = matches[2] || width;
     return random
       ? `/${width}/${height}?random=${getRandomNumber()}`
       : `/${width}/${height}`;
@@ -30,29 +27,24 @@ function picsumDimensions(input, random) {
 }
 
 function placekittenDimensions(input) {
-  const regex = /^(?:(w)?(\d+)|(\d+))(?:\s|,)(?:(h)?(\d+))?$/;
+  const regex = /^(\d+)(?:\s|,)?(\d+)?$/;
   if (regex.test(input)) {
     const matches = input.match(regex);
-    let width = matches[2] || matches[3];
-    let height = matches[5] || width;
-    if (matches[1] === "w") {
-      [width, height] = [height, width];
-    }
+    const width = matches[1];
+    const height = matches[2] || width;
     return `/${width}/${height}`;
   }
   return "Invalid input format";
 }
 
 function loremflickrDimensions(input, random) {
-  const regex = /^(?:(w)?(\d+)|(\d+))(?:\s|,)(?:(h)?(\d+))?(\s([\w\s,]+))?$/;
+  const regex = /^(\d+)(?:\s|,)?(\d+)?(?:\s([\w\s,]+))?$/;
   if (regex.test(input)) {
     const matches = input.match(regex);
-    let width = matches[2] || matches[3];
-    let height = matches[5] || width;
-    const categories = matches[7] ? matches[7].replace(/\s+/g, ",") : "";
-    if (matches[1] === "w") {
-      [width, height] = [height, width];
-    }
+    const width = matches[1];
+    const height = matches[2] || width;
+    const categories = matches[3] ? matches[3].replace(/\s+/g, ",") : "";
+
     if (random) {
       return `/${width}/${height}/${categories}?random=${getRandomNumber()}`;
     } else {

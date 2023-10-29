@@ -27,12 +27,16 @@
         "command": "image-placeholder.picsumPlaceholderTag"
       },
       {
-        "title": "Picsum img tag placeholder",
+        "title": "Picsum img tag placeholder random",
         "command": "image-placeholder.picsumPlaceholderTagRandom"
       },
       {
         "title": "Picsum CSS background placeholder",
         "command": "image-placeholder.picsumPlaceholderCssBg"
+      },
+      {
+        "title": "Picsum CSS background placeholder random",
+        "command": "image-placeholder.picsumPlaceholderCssBgRandom"
       },
       { "separator": true },
       {
@@ -48,6 +52,10 @@
         "command": "image-placeholder.loremflickrPlaceholderTag"
       },
       {
+        "title": "Loremflickr img tag placeholder random",
+        "command": "image-placeholder.loremflickrPlaceholderTagRandom"
+      },
+      {
         "title": "Loremflickr CSS background placeholder",
         "command": "image-placeholder.loremflickrPlaceholderCssBg"
       },
@@ -55,6 +63,7 @@
         "title": "Loremflickr CSS background placeholder random",
         "command": "image-placeholder.loremflickrPlaceholderCssBgRandom"
       },
+      { "separator": true },
       {
         "title": "Placekitten image placeholder",
         "command": "image-placeholder.placekittenPlaceholder"
