@@ -23,7 +23,10 @@ function picsumDimensions(input, random) {
       ? `/${width}/${height}?random=${getRandomNumber()}`
       : `/${width}/${height}`;
   }
-  return "Invalid input format";
+  nova.workspace.showErrorMessage(
+    `Incorrect formatting, please format as either: \n width height, width/height or width,height`
+  );
+  return false; // Return an empty string on error
 }
 
 function placekittenDimensions(input) {
@@ -34,7 +37,10 @@ function placekittenDimensions(input) {
     const height = matches[2] || width;
     return `/${width}/${height}`;
   }
-  return "Invalid input format";
+  nova.workspace.showErrorMessage(
+    `Incorrect formatting, please format as either: \n width height, width/height or width,height`
+  );
+  return false;
 }
 
 function loremflickrDimensions(input, random) {
@@ -51,7 +57,10 @@ function loremflickrDimensions(input, random) {
       return `/${width}/${height}/${categories}`;
     }
   }
-  return "Invalid input format";
+  nova.workspace.showErrorMessage(
+    `Incorrect formatting, please format as either: \n {w} {h} {category}, {w}/{h} {category} or {w},{h} {category}`
+  );
+  return false;
 }
 
 // PICSUM ---------------------------------------------------
@@ -66,7 +75,9 @@ nova.commands.register("image-placeholder.picsumPlaceholder", (editor) => {
     function (result) {
       if (result) {
         let dimensions = picsumDimensions(result, random, provider);
-        editor.insert(provider + dimensions);
+        if (dimensions !== false) {
+          editor.insert(provider + dimensions);
+        }
       }
     }
   );
@@ -85,7 +96,9 @@ nova.commands.register(
       function (result) {
         if (result) {
           let dimensions = picsumDimensions(result, random, provider);
-          editor.insert(provider + dimensions);
+          if (dimensions !== false) {
+            editor.insert(provider + dimensions);
+          }
         }
       }
     );
@@ -103,7 +116,9 @@ nova.commands.register("image-placeholder.picsumPlaceholderTag", (editor) => {
     function (result) {
       if (result) {
         let dimensions = picsumDimensions(result, random, provider);
-        editor.insert(`<img src="${provider}${dimensions}" alt="$[]">`);
+        if (dimensions !== false) {
+          editor.insert(`<img src="${provider}${dimensions}" alt="$[]">`);
+        }
       }
     }
   );
@@ -122,7 +137,9 @@ nova.commands.register(
       function (result) {
         if (result) {
           let dimensions = picsumDimensions(result, random, provider);
-          editor.insert(`<img src="${provider}${dimensions}" alt="$[]">`);
+          if (dimensions !== false) {
+            editor.insert(`<img src="${provider}${dimensions}" alt="$[]">`);
+          }
         }
       }
     );
@@ -140,7 +157,9 @@ nova.commands.register("image-placeholder.picsumPlaceholderCssBg", (editor) => {
     function (result) {
       if (result) {
         let dimensions = picsumDimensions(result, random, provider);
-        editor.insert(`background-image: url("${provider}${dimensions}")`);
+        if (dimensions !== false) {
+          editor.insert(`background-image: url("${provider}${dimensions}")`);
+        }
       }
     }
   );
@@ -159,7 +178,9 @@ nova.commands.register(
       function (result) {
         if (result) {
           let dimensions = picsumDimensions(result, random, provider);
-          editor.insert(`background-image: url("${provider}${dimensions}")`);
+          if (dimensions !== false) {
+            editor.insert(`background-image: url("${provider}${dimensions}")`);
+          }
         }
       }
     );
@@ -178,7 +199,9 @@ nova.commands.register("image-placeholder.loremflickrPlaceholder", (editor) => {
     function (result) {
       if (result) {
         let dimensions = loremflickrDimensions(result, random, provider);
-        editor.insert(provider + dimensions);
+        if (dimensions !== false) {
+          editor.insert(provider + dimensions);
+        }
       }
     }
   );
@@ -196,7 +219,9 @@ nova.commands.register(
       function (result) {
         if (result) {
           let dimensions = loremflickrDimensions(result, random, provider);
-          editor.insert(provider + dimensions);
+          if (dimensions !== false) {
+            editor.insert(provider + dimensions);
+          }
         }
       }
     );
@@ -216,7 +241,9 @@ nova.commands.register(
       function (result) {
         if (result) {
           let dimensions = loremflickrDimensions(result, random, provider);
-          editor.insert(`<img src="${provider}${dimensions}" alt="$[]">`);
+          if (dimensions !== false) {
+            editor.insert(`<img src="${provider}${dimensions}" alt="$[]">`);
+          }
         }
       }
     );
@@ -236,7 +263,9 @@ nova.commands.register(
       function (result) {
         if (result) {
           let dimensions = loremflickrDimensions(result, random, provider);
-          editor.insert(`<img src="${provider}${dimensions}" alt="$[]">`);
+          if (dimensions !== false) {
+            editor.insert(`<img src="${provider}${dimensions}" alt="$[]">`);
+          }
         }
       }
     );
@@ -256,7 +285,9 @@ nova.commands.register(
       function (result) {
         if (result) {
           let dimensions = loremflickrDimensions(result, random, provider);
-          editor.insert(`background-image: url("${provider}${dimensions}")`);
+          if (dimensions !== false) {
+            editor.insert(`background-image: url("${provider}${dimensions}")`);
+          }
         }
       }
     );
@@ -276,7 +307,9 @@ nova.commands.register(
       function (result) {
         if (result) {
           let dimensions = loremflickrDimensions(result, random, provider);
-          editor.insert(`background-image: url("${provider}${dimensions}")`);
+          if (dimensions !== false) {
+            editor.insert(`background-image: url("${provider}${dimensions}")`);
+          }
         }
       }
     );
@@ -295,7 +328,9 @@ nova.commands.register("image-placeholder.placekittenPlaceholder", (editor) => {
     function (result) {
       if (result) {
         let dimensions = placekittenDimensions(result, random, provider);
-        editor.insert(provider + dimensions);
+        if (dimensions !== false) {
+          editor.insert(provider + dimensions);
+        }
       }
     }
   );
@@ -314,7 +349,9 @@ nova.commands.register(
       function (result) {
         if (result) {
           let dimensions = placekittenDimensions(result, random, provider);
-          editor.insert(`<img src="${provider}${dimensions}" alt="$[]">`);
+          if (dimensions !== false) {
+            editor.insert(`<img src="${provider}${dimensions}" alt="$[]">`);
+          }
         }
       }
     );
@@ -334,7 +371,9 @@ nova.commands.register(
       function (result) {
         if (result) {
           let dimensions = placekittenDimensions(result, random, provider);
-          editor.insert(`background-image: url("${provider}${dimensions}")`);
+          if (dimensions !== false) {
+            editor.insert(`background-image: url("${provider}${dimensions}")`);
+          }
         }
       }
     );
